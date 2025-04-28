@@ -45,26 +45,41 @@ INSERT INTO `diagnosa` (`no_reg`, `pasien_id`, `diagnosa`, `tanggal_periksa`) VA
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `master_obat`
+--
+
+CREATE TABLE `master_obat` (
+`obat_id` int NOT NULL AUTO_INCREMENT,
+`nama_obat` varchar(255) NULL,
+`harga_obat` float NULL,
+`cara_pakai_obat` varchar(255) NULL,
+PRIMARY KEY (`obat_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `diperiksa_oleh`
 --
 
 CREATE TABLE `diperiksa_oleh` (
-  `id` int(11) NOT NULL,
-  `no_reg` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL,
-  `tanggal_periksa` date NOT NULL
+`id` int NOT NULL AUTO_INCREMENT,
+`no_reg` int NOT NULL,
+`id_user` int NOT NULL,
+`tanggal_periksa` date NOT NULL,
+PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `diperiksa_oleh`
 --
 
-INSERT INTO `diperiksa_oleh` (`id`, `no_reg`, `id_user`, `tanggal_periksa`) VALUES
-(0, 15, 18, '2023-01-30'),
-(0, 1, 14, '2023-02-17'),
-(0, 2, 22, '2023-02-17'),
-(0, 3, 22, '2023-02-17'),
-(0, 4, 7, '2023-02-17');
+INSERT INTO `diperiksa_oleh` (`no_reg`, `id_user`, `tanggal_periksa`) VALUES
+(15, 18, '2023-01-30'),
+(1, 14, '2023-02-17'),
+(2, 22, '2023-02-17'),
+(3, 22, '2023-02-17'),
+(4, 7, '2023-02-17');
 
 -- --------------------------------------------------------
 
