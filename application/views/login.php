@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Ray Clinic</title>
+	<title>Praktik Dokter Raysha Ramadhani</title>
 	<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/web1.png">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
 					<span class="icon-bar"></span>
 				</button>
 
-				<a class="navbar-brand" href="login"><img src="<?php echo base_url(); ?>assets/img/logo1.png" alt=""> Ray Clinic</a>
+				<a class="navbar-brand" href="login"><img src="<?php echo base_url(); ?>assets/img/logo1.png" alt=""> Praktik Dokter Raysha Ramadhani</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">

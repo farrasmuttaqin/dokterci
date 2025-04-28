@@ -56,7 +56,7 @@
         <center>LAPORAN PEMERIKSAAN DOKTER</center>
       </b>
 
-      <center>Ray Clinic <br>
+      <center>Praktik Dokter Raysha Ramadhani <br>
       </center>
       <td style="border-bottom:solid 1px #000000"><span class="style2">
           <br>

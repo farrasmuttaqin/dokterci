@@ -16,7 +16,6 @@ class Terapi extends CI_Controller{
 
 	function index(){
 		$data['query'] = $this->registrasi->tampil_registrasi();
-
 		$this->load->view('head');
 		$this->load->view('terapi/terapi_view', $data);
 		$this->load->view('foot');

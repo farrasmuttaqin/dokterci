@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Ray Clinic</title>
+  <title>Praktik Dokter Raysha Ramadhani</title>
 
   <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/logo/klinikbudi.png">
   <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
@@ -155,6 +155,13 @@
         },
       });
 
+        $('#master-obat').DataTable({
+            "ajax": {
+                url: "<?= site_url() ?>/master_obat/get_items",
+                type: 'GET'
+            },
+        });
+
     });
 
     $(function() {
@@ -184,7 +191,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <?php echo anchor('depan', 'Ray Clinic', array('class' => 'navbar-brand')); ?>
+        <?php echo anchor('depan', 'Praktik Dokter Raysha Ramadhani', array('class' => 'navbar-brand')); ?>
         <img src="<?php echo base_url(); ?>assets/img/logo/klinikbudi.png" class=" media-object" style="width:45px;" alt="" />
       </div>
       <div class="navbar-collapse collapse navbar-inverse-collapse">
@@ -201,6 +208,7 @@
                 <li> <?php echo anchor('pasien', 'Data Pasien'); ?></li>
                 <li> <?php echo anchor('master_diagnosa', 'Data Diagnosa'); ?></li>
                 <li> <?php echo anchor('master_tindakan', 'Data Tindakan'); ?></li>
+                  <li> <?php echo anchor('master_obat', 'Data Obat'); ?></li>
               </ul>
             </li>
             <li class="dropdown">

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Cetak Riwayat Medik Pasien</title>
+  <title>Cetak Obat</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/cetak.css">
   <style type="text/css">
@@ -54,7 +54,7 @@
   <table width="700" border="0" cellspacing="0" cellpadding="2" align="center">
     <tr>
       <b>
-        <center>MASTER DATA TINDAKAN</center>
+        <center>MASTER DATA OBAT</center>
       </b>
 
       <center>Praktik Dokter Raysha Ramadhani <br> </center><br>
@@ -80,9 +80,9 @@
 
   <table class="table" align="center">
     <tr class="info">
-      <th width="20%">Kode ICD9</th>
-      <th width="30%">Nama Tindakan</th>
-      <th width="30%">Biaya</th>
+      <th width="20%">Nama Obat</th>
+      <th width="30%">Harga obat</th>
+      <th width="30%">Cara Pakai Obat</th>
     </tr>
 
     <tbody>
@@ -92,9 +92,9 @@
         foreach ($cetak as $rowcetak) :
       ?>
           <tr>
-            <td><?php echo $rowcetak->kode_tindakan; ?></td>
-            <td><?php echo $rowcetak->nama_tindakan; ?></td>
-            <td><?php echo $rowcetak->biaya; ?></td>
+            <td><?php echo $rowcetak->nama_obat; ?></td>
+            <td><?php echo $rowcetak->harga_obat; ?></td>
+            <td><?php echo $rowcetak->cara_pakai_obat; ?></td>
 
           </tr>
 

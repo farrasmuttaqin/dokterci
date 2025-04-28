@@ -14,7 +14,7 @@
               <p>Repost by <a href='' title='' target='_blank'></a></p>
             </center> -->
 
-            <h2 align="center">Ray Clinic</h2>
+            <h2 align="center">Praktik Dokter Raysha Ramadhani</h2>
             <!-- <h4 align="center">Desa Jalur Mulya, Jalur 13 Blok C RT.10 RW.03 Kec. Muara Sugihan Kab. Banyuasin Prov. Sumatera Selatan</h4> -->
             <h9 align="center">jika ingin mengganti nama klinik ada copyrightnya di custom dari code programnya 150rb untuk jasanya</h9>
             <!-- <h4 align="center">Telp / WA. 0813 7384 8151</h4> -->

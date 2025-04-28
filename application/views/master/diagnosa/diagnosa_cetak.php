@@ -57,7 +57,7 @@
         <center>MASTER DATA DIAGNOSA</center>
       </b>
 
-      <center>Ray Clinic<br> </center><br>
+      <center>Praktik Dokter Raysha Ramadhani<br> </center><br>
       <!--<?php echo "<center>Oleh : " . $this->session->userdata('namalengkap') . "</center>"; ?><br>-->
       <td style="border-bottom:solid 1px #000000"><span class="style2">
         </span></td>
