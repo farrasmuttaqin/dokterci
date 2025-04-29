@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	function hapus(id, noreg){
+	function hapusterapi(id, noreg){
 		if(confirm('Yakin mau menghapus data ini?')){
 			$(document).ready(function(){
 				$.ajax({
@@ -33,7 +33,7 @@ if(empty($query)){
 			<td><?php echo $row->etiket;?></td>
 			<td><?php echo $row->jml;?></td>
 			<td>
-				<a href="#" onclick="hapus('<?php echo $row->id;?>','<?php echo $row->no_reg;?>')" title="Hapus Data Diagnosa" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+				<a href="#" onclick="hapusterapi('<?php echo $row->id;?>','<?php echo $row->no_reg;?>')" title="Hapus Data Terapi" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
 			</td>
 		</tr>
 		<?php

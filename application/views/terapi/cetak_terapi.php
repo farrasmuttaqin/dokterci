@@ -30,8 +30,8 @@ tr td{
   <tr>
     <?php echo "<b><center>LAPORAN PEMERIKSAAN DOKTER</center></b>
 
-    <center>PRAKTIK DOKTER SETIA BUDI Desa Jalur Mulya, Jalur 13 Blok C RT.10 RW.03 Kec. Muara Sugihan Kab. Banyuasin Prov. Sumatera Selatan
-    Telp / WA. 0813 7384 8151 </center>";?><hr>
+    <center>PRAKTIK DOKTER RAYSHA RAMADHANI <br> Jl Alexindo no 05, RT.005 RW.0016, Kel. Harapan Jaya, Kec. Bekasi Utara, Kota. Bekasi, Prov. Jawa Barat
+    Telp / WA. 0813 8141 7763 </center>";?><hr>
     <td style="border-bottom:solid 1px #000000"><span class="style2">
     <p style="float:left;"><?php echo "Petugas : ".$this->session->userdata('namalengkap')?></p>
     <p style="float:right;">Diperiksa oleh : <?php echo $dokter->namalengkap; ?></p>
@@ -110,6 +110,37 @@ tr td{
       endforeach;
     }
   ?>
+</table>
+<br>
+
+<table width="700" border="0" cellspacing="0" cellpadding="3" align="center">
+    <tr><th colspan="2" align="left">Data Obat</th></tr>
+    <tr>
+        <td style="border-top:1px solid #000;border-bottom:1px solid #000;">No.</td>
+        <td style="border-top:1px solid #000;border-bottom:1px solid #000;">Nama Obat</td>
+        <td style="border-top:1px solid #000;border-bottom:1px solid #000;">Cara Pakai Obat</td>
+        <td align="right" style="border-top:1px solid #000;border-bottom:1px solid #000;">Biaya(Rp)</td>
+    </tr>
+    <?php
+    if(empty($obat)){
+        echo '<tr><th colspan="2">Data tidak tersedia.</th></tr>';
+    }else{
+        $no = 1;
+
+        foreach($obat as $rowobat):
+            ?>
+            <tr>
+                <td><?php echo $no;?></td>
+                <td><?php echo $rowobat->nama_obat;?></td>
+                <td><?php echo $rowobat->cara_pakai_obat;?></td>
+                <td align="right"><?php echo number_format($rowobat->harga_obat,2,',','.');?></td>
+            </tr>
+            <?php
+            $sum += $rowobat->harga_obat;
+            $no++;
+        endforeach;
+    }
+    ?>
 </table>
 <br>
 

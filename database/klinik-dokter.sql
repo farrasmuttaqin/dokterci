@@ -59,6 +59,22 @@ PRIMARY KEY (`obat_id`)
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `resep`
+--
+
+CREATE TABLE `resep` (
+ `no_reg` varchar(20) NOT NULL,
+ `pasien_id` int(6) unsigned zerofill NOT NULL,
+ `obat_id` int(20) NOT NULL,
+ `qty` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+
+
+
+--
 -- Table structure for table `diperiksa_oleh`
 --
 

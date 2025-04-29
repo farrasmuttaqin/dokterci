@@ -12,6 +12,24 @@ class M_mastertindakan extends CI_Model
 		$this->db->insert('master_tindakan', $data);
 	}
 
+
+    function tampil_masterobat($num = '', $offset = '')
+    {
+        $this->db->select(array(
+            'obat_id',
+            'nama_obat',
+        ), FALSE);
+
+        $this->db->order_by('obat_id', 'DESC');
+        if ($num != '' && $offset != '') {
+            $query = $this->db->get('master_obat', $num, $offset);
+        } else {
+            $query = $this->db->get('master_obat');
+        }
+
+        return $query->result();
+    }
+
 	function tampil_mastertindakan($num = '', $offset = '')
 	{
 		$this->db->select(array(

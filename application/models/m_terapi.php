@@ -103,6 +103,14 @@ function tampil_tindakan($noreg){
 	return $query->result();
 }
 
+    function tampil_obat($noreg){
+        $this->db->select('resep.*,master_obat.*');
+        $this->db->join('master_obat','master_obat.obat_id = resep.obat_id');
+        $query = $this->db->get_where('resep',array('no_reg'=>$noreg));
+
+        return $query->result();
+    }
+
 
 function tampil_history_tindakan($pasien){
 	$this->db->select(array(
@@ -160,6 +168,13 @@ function hapus_tindakan($noreg, $pasien_id, $tindakan, $tanggal_periksa){
 	$this->db->where('tanggal_periksa', $tanggal_periksa);
 	$this->db->delete('tindakan');
 }
+
+    function hapus_obat($noreg, $pasien_id, $obat_id){
+        $this->db->where('no_reg', $noreg);
+        $this->db->where('pasien_id', $pasien_id);
+        $this->db->where('obat_id', $obat_id);
+        $this->db->delete('resep');
+    }
 
 function hapus_terapi($id){
 	$this->db->where('id', $id);

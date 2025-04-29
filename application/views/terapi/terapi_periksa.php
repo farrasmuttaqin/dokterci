@@ -71,6 +71,9 @@
 							<li role="periksa">
 								<a href="#terapi" aria-controls="terapi" role="tab" data-toggle="tab">Terapi</a>
 							</li>
+                            <li role="periksa">
+                                <a href="#obat" aria-controls="obat" role="tab" data-toggle="tab">Obat</a>
+                            </li>
 						</ul>
 						<div class="tab-content">
 							<div role="tabpanel" class="tab-pane active" id="diagnosa">
@@ -137,6 +140,30 @@
 			  		</table>
 			  		<div id="dataterapi"></div>
 			  	</div>
+
+                            <div role="tabpanel" class="tab-pane" id="obat">
+                                <table class="table">
+                                    <tr>
+                                        <th colspan="2">Input Obat</th>
+                                    </tr>
+                                    <tr>
+                                        <th><?php
+                                            // echo form_input(array('id'=>'formtindakan','class'=>'form-control'));
+                                            ?>
+
+                                            <select name="obat[]" id="formobat" class="form-control select2">
+                                                <?php foreach ($list_obat as $item):?>
+                                                    <option value="<?=$item->obat_id ?>">
+                                                        <?= $item->nama_obat ?>
+                                                    </option>
+                                                <?php endforeach ?>
+
+                                        </th>
+                                        <th><?php echo form_submit(array('type'=>'button','id'=>'simpanobat','value'=>'Tambah','class'=>'btn btn-info'));?></th>
+                                    </tr>
+                                </table>
+                                <div id="dataobat"></div>
+                            </div>
 			  </div>
 
 			  <div class="well">
@@ -156,6 +183,10 @@
 <script type="text/javascript">
 
 	$(document).ready(function(){
+
+        $('#datadiagnosa').load('<?php echo site_url();?>/terapi/tampildiagnosa/'+<?php echo $pasien->no_reg;?>);
+        $('#datatindakan').load('<?php echo site_url();?>/terapi/tampiltindakan/'+<?php echo $pasien->no_reg;?>);
+        $('#dataobat').load('<?php echo site_url();?>/terapi/tampilobat/'+<?php echo $pasien->no_reg;?>);
 
 		$('#simpandiagnosa').click(function(){
 			var diagnosa = $('#formdiagnosa').val();
@@ -188,6 +219,37 @@
 			}
 		});
 
+        $('#simpanobat').click(function(){
+            var obat = $('#formobat').val();
+            var pasien = '<?php echo $pasien->id;?>'
+            var noreg = '<?php echo $pasien->no_reg;?>'
+
+            console.log(obat)
+            if(obat == ""){
+                $.ajax({
+                    success:function(html){
+                        $('#notif').html('Silahkan input data obat terlebih dahulu');
+                        $('#notif').fadeIn(1000);
+                        $('#notif').fadeOut(2500);
+                        $('#formtindakan').focus();
+                    }
+                });
+            }else{
+                $.ajax({
+                    url : '<?php echo site_url();?>/terapi/tambahobat',
+                    type : 'POST',
+                    data : 'obat='+obat+'&noreg='+noreg+'&pasien='+pasien,
+                    beforeSend : function(html){
+                        $('#dataobat').html('<center><img src="<?php echo base_url();?>assets/img/loading-gede.gif"></center>');
+                        $('#dataobat').fadeIn(2000);
+                    },
+                    success:function(){
+                        $('#dataobat').load('<?php echo site_url();?>/terapi/tampilobat/'+noreg);
+                        $('#formobat').val('');
+                    }
+                });
+            }
+        });
 
 		$('#simpantindakan').click(function(){
 			var tindakan = $('#formtindakan').val();
@@ -219,7 +281,6 @@
 				});
 			}
 		});
-
 
 		$('#simpanterapi').click(function(){
 			var obat = $('#formobat').val();

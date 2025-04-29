@@ -53,9 +53,9 @@
 <body onload="window.print()">
 
   <div class="title" align="center">
-    <?php echo "<center>PRAKTIK DOKTER SETIA BUDI</center>"; ?><br>
-    <?php echo "Desa Jalur Mulya, Jalur 13 Blok C RT.10 RW.03 Kec. Muara Sugihan Kab. Banyuasin Prov. Sumatera Selatan "; ?><br>
-    <?php echo "Telp / WA. 0813 7384 8151"; ?> <br>
+    <?php echo "<center>PRAKTIK DOKTER RAYSHA RAMADHANI</center>"; ?><br>
+    <?php echo "Jl Alexindo no 05, RT.005 RW.0016, Kel. Harapan Jaya, Kec. Bekasi Utara, Kota. Bekasi, Prov. Jawa Barat "; ?><br>
+    <?php echo "Telp / WA. 0813 8141 7763"; ?> <br>
     <br>
     <?php echo $this->session->userdata('namalengkap'); ?><br>
   </div>

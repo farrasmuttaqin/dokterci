@@ -48,6 +48,7 @@ class Terapi extends CI_Controller{
 		$data['dokter'] = $this->pengguna->get_users_by_role('dokter');
 		$data['list_diagnosa'] = $this->diagnosa->tampil_masterdiagnosa();
 		$data['list_tindakan'] = $this->tindakan->tampil_mastertindakan();
+        $data['list_obat'] = $this->tindakan->tampil_masterobat();
 
 		$this->load->view('head');
 		$this->load->view('terapi/terapi_periksa', $data);
@@ -60,6 +61,7 @@ class Terapi extends CI_Controller{
 	function cetak($noreg, $pasien){
 		$data['pasien'] = $this->terapi->ambil_data_pasien($pasien,$noreg);
 		$data['tindakan'] = $this->terapi->tampil_tindakan($noreg);
+        $data['obat'] = $this->terapi->tampil_obat($noreg);
 		$data['diagnosa'] = $this->terapi->tampil_diagnosa($noreg);
 		$data['terapi'] = $this->terapi->tampil_terapi($noreg);
 		$data['dokter'] = $this->terapi->dokter($noreg);
@@ -159,6 +161,22 @@ class Terapi extends CI_Controller{
 	}
 
 
+    function tambahobat(){
+
+        $data = array(
+            'no_reg'=>$this->input->post('noreg'),
+            'pasien_id'=>$this->input->post('pasien'),
+            'obat_id'=>$this->input->post('obat'),
+        );
+
+        $this->terapi->amburadul_data('resep',$data);
+    }
+
+    function tampilobat($noreg){
+        $data['query'] = $this->terapi->tampil_obat($noreg);
+
+        $this->load->view('terapi/tampil_obat', $data);
+    }
 
 	/**
 	* =================================
@@ -188,6 +206,10 @@ class Terapi extends CI_Controller{
 	function hapustindakan($noreg, $pasien_id, $tindakan, $tanggal_periksa){
 		$this->terapi->hapus_tindakan($noreg, $pasien_id, $tindakan, $tanggal_periksa);
 	}
+
+    function hapusobat($noreg, $pasien_id, $obat_id){
+        $this->terapi->hapus_obat($noreg, $pasien_id, $obat_id);
+    }
 
 
 	/**

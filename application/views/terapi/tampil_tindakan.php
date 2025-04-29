@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	function hapus(noreg, pasien_id, tindakan, tanggal_periksa){
+	function hapustindakan(noreg, pasien_id, tindakan, tanggal_periksa){
 		if(confirm('Yakin mau menghapus data ini?')){
 			$(document).ready(function(){
 				$.ajax({
@@ -33,7 +33,7 @@ if(empty($query)){
 		<tr>
 			<td><?php echo $row->nama_tindakan;?></td>
 			<td>
-				<a href="#" onclick="hapus('<?php echo $row->no_reg;?>','<?php echo $row->pasien_id;?>','<?php echo $row->tindakan ?>','<?php echo $row->tanggal_periksa ?>')" title="Hapus Data Diagnosa" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+				<a href="#" onclick="hapustindakan('<?php echo $row->no_reg;?>','<?php echo $row->pasien_id;?>','<?php echo $row->tindakan ?>','<?php echo $row->tanggal_periksa ?>')" title="Hapus Data Tindakan" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
 			</td>
 		</tr>
 		<?php
