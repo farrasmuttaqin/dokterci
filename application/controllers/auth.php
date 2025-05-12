@@ -1,28 +1,41 @@
-<?php 
+<?php
 
 class Auth extends CI_Controller {
+    public $db;
+    protected $benchmark;
+    protected $hooks;
+    protected $config;
+    protected $utf8;
+    protected $uri;
+    protected $exceptions;
+    protected $router;
+    protected $output;
+    protected $security;
+    protected $input;
+    protected $lang;
+
 	function __construct() {
-		parent::__construct();
-	
+        parent::__construct();
+
 		$this->load->model('m_auth');
-	 }	
-	
+	 }
+
 	public function index()
 	{
 		$session = $this->session->userdata('isLogin');
 
 		if($session == FALSE)
 		{
-			redirect('auth/login');		
+			redirect('auth/login');
 		}else
 		{
-			redirect('depan');     
-		}			
+			redirect('depan');
+		}
 	}
-	
+
 	public function login(){
-		$this->form_validation->set_rules('username', 'Username', 'required|trim|min_lenght[5]|max_lenght[20]|xss_clean');
-		$this->form_validation->set_rules('password', 'Password', 'required|min_lenght[5]|max_lenght[20]|xss_clean|md5');
+		$this->form_validation->set_rules('username', 'Username', 'required|trim|min_lenght[5]|max_lenght[200]|xss_clean');
+		$this->form_validation->set_rules('password', 'Password', 'required|min_lenght[5]|max_lenght[200]|xss_clean|md5');
 		$this->form_validation->set_error_delimiters('<br>');
 
 		if($this->form_validation->run() == FALSE)
@@ -30,7 +43,7 @@ class Auth extends CI_Controller {
 			$this->load->view('login');
 		}else
 		{
-			$username = $this->input->post('username');	
+			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 
 			$cek = $this->m_auth->cek_pengguna($username, $password);
@@ -52,7 +65,7 @@ class Auth extends CI_Controller {
 				'tgl_login'=>$now,
 				'ip_login'=>$ip
 				);
-				
+
 				$this->m_auth->update_data_user($data_user, $username);
 
 				redirect('depan');
@@ -60,17 +73,17 @@ class Auth extends CI_Controller {
 			{
 				$this->session->set_flashdata('pesan', '<div class="alert alert-danger">Username dan Password salah!</div>');
 				$this->load->view('login');
-			}	
+			}
 		}
 	}
-	
-	
+
+
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		
+
 		redirect('auth/login');
 	}
-	
+
 //end of class
 } ?>

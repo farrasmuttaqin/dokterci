@@ -39,3 +39,5 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
+
+defined('VIEWPATH') OR define('VIEWPATH', APPPATH . 'views/');
