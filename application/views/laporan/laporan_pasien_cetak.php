@@ -55,7 +55,7 @@
   <div class="title" align="center">
     <?php echo "<center>PRAKTIK DOKTER RAYSHA RAMADHANI</center>"; ?><br>
     <?php echo "Jl Alexindo no 05, RT.005 RW.0016, Kel. Harapan Jaya, Kec. Bekasi Utara, Kota. Bekasi, Prov. Jawa Barat "; ?><br>
-    <?php echo "Telp / WA. 0813 8141 7763"; ?> <br>
+    <?php echo "Telp / WA. 0896 3034 5670"; ?> <br>
     <br>
     <?php echo $this->session->userdata('namalengkap'); ?><br>
   </div>

@@ -16,8 +16,7 @@
 
             <h2 align="center">Praktik Dokter Raysha Ramadhani</h2>
             <!-- <h4 align="center">Jl Alexindo no 05, RT.005 RW.0016, Kel. Harapan Jaya, Kec. Bekasi Utara, Kota. Bekasi, Prov. Jawa Barat</h4> -->
-            <h9 align="center">jika ingin mengganti nama klinik ada copyrightnya di custom dari code programnya 150rb untuk jasanya</h9>
-            <!-- <h4 align="center">Telp / WA. 0813 8141 7763</h4> -->
+            <!-- <h4 align="center">Telp / WA. 0896 3034 5670</h4> -->
           </div>
         </div>
       </div>

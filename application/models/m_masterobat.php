@@ -1,5 +1,5 @@
 <?php
-class M_masterobat extends CI_Model
+class m_masterobat extends CI_Model
 {
 
 	function __construct()

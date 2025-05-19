@@ -31,7 +31,7 @@ tr td{
     <?php echo "<b><center>LAPORAN PEMERIKSAAN DOKTER</center></b>
 
     <center>PRAKTIK DOKTER RAYSHA RAMADHANI <br> Jl Alexindo no 05, RT.005 RW.0016, Kel. Harapan Jaya, Kec. Bekasi Utara, Kota. Bekasi, Prov. Jawa Barat
-    Telp / WA. 0813 8141 7763 </center>";?><hr>
+    Telp / WA. 0896 3034 5670 </center>";?><hr>
     <td style="border-bottom:solid 1px #000000"><span class="style2">
     <p style="float:left;"><?php echo "Petugas : ".$this->session->userdata('namalengkap')?></p>
     <p style="float:right;">Diperiksa oleh : <?php echo $dokter->namalengkap; ?></p>
